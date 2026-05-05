@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安徽旭辰纺织科技有限公司 - 高端纺织面料研发与生产</title>
+    <meta name="description" content="安徽旭辰纺织科技有限公司专注于高端纺织面料研发、生产、销售，为国内外品牌提供高品质纺织解决方案，行业领先的纺织科技企业。">
+    <link rel="icon" href="favicon.ico">
+    <!-- 引入外部资源 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 配置Tailwind自定义主题 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F3B5F',    // 企业深蓝（高端主色）
+                        secondary: '#D4AF37',  // 轻奢金（点缀色）
+                        neutral: '#F5F7F9',    // 浅灰背景
+                        dark: '#1A1A1A'        // 纯黑文字
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            }
+            .bg-gradient-hero {
+                background: linear-gradient(rgba(15,59,95,0.85), rgba(15,59,95,0.9));
+            }
+            .hover-scale {
+                transition: transform 0.3s ease;
+            }
+            .hover-scale:hover {
+                transform: translateY(-3px) scale(1.02);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-dark antialiased">
+<!-- 导航栏 -->
+<header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="flex items-center justify-between h-20">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-2">
+                <span class="text-primary text-2xl font-bold">安徽旭辰纺织</span>
+            </a>
+
+            <!-- 桌面端菜单 -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-primary font-medium hover:text-secondary transition-colors">首页</a>
+                <a href="#about" class="text-gray-700 font-medium hover:text-secondary transition-colors">关于我们</a>
+                <a href="#product" class="text-gray-700 font-medium hover:text-secondary transition-colors">产品中心</a>
+                <a href="#advantage" class="text-gray-700 font-medium hover:text-secondary transition-colors">企业优势</a>
+                <a href="#contact" class="text-gray-700 font-medium hover:text-secondary transition-colors">联系我们</a>
+            </nav>
+
+            <!-- 移动端菜单按钮 -->
+            <button id="menuBtn" class="md:hidden text-primary text-2xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- 移动端下拉菜单 -->
+    <div id="mobileMenu" class="md:hidden hidden bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+            <a href="#home" class="py-2 text-primary">首页</a>
+            <a href="#about" class="py-2 text-gray-700">关于我们</a>
+            <a href="#product" class="py-2 text-gray-700">产品中心</a>
+            <a href="#advantage" class="py-2 text-gray-700">企业优势</a>
+            <a href="#contact" class="py-2 text-gray-700">联系我们</a>
+        </div>
+    </div>
+</header>
+
+<!-- 首页Banner -->
+<section id="home" class="pt-20 relative h-screen flex items-center justify-center bg-[url('https://picsum.photos/id/175/1920/1080')] bg-cover bg-center">
+    <div class="absolute inset-0 bg-gradient-hero"></div>
+    <div class="relative container mx-auto px-4 md:px-6 text-center text-white">
+        <h1 class="text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-tight text-shadow mb-4">
+            安徽旭辰纺织科技有限公司
+        </h1>
+        <p class="text-[clamp(1rem,2vw,1.5rem)] opacity-90 max-w-3xl mx-auto mb-8">
+            专注高端纺织面料研发与生产 · 匠心品质 · 科技赋能
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#product" class="bg-secondary hover:bg-secondary/90 text-white px-8 py-3 rounded-md font-medium transition-colors">
+                产品中心
+            </a>
+            <a href="#contact" class="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border border-white/30 px-8 py-3 rounded-md font-medium transition-colors">
+                联系我们
+            </a>
+        </div>
+    </div>
+    <!-- 向下滚动箭头 -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <i class="fa fa-angle-down text-white text-3xl"></i>
+    </div>
+</section>
+
+<!-- 关于我们 -->
+<section id="about" class="py-20 bg-neutral">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-[clamp(1.8rem,4vw,2.8rem)] font-bold text-primary mb-3">关于我们</h2>
+            <div class="w-20 h-1 bg-secondary mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="rounded-lg overflow-hidden shadow-xl hover-scale">
+                <img src="https://picsum.photos/id/119/800/600" alt="旭辰纺织厂区" class="w-full h-auto object-cover">
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold text-primary mb-4">安徽旭辰纺织科技有限公司</h3>
+                <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                    安徽旭辰纺织科技有限公司坐落于安徽，是一家集研发、设计、生产、销售于一体的现代化高端纺织企业。公司拥有先进的生产设备、专业的研发团队以及完善的品质管控体系。
+                </p>
+                <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                    我们始终坚持“品质为本、创新为魂、客户至上”的经营理念，专注于为服装、家居、家纺等领域提供高品质、高附加值的纺织面料解决方案，产品远销全国及海外市场。
+                </p>
+                <div class="flex gap-4 flex-wrap">
+                    <div class="bg-white p-4 rounded-md shadow-sm flex-1 min-w-[150px]">
+                        <h4 class="font-bold text-primary text-xl">10+</h4>
+                        <p class="text-gray-600">行业经验</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-md shadow-sm flex-1 min-w-[150px]">
+                        <h4 class="font-bold text-primary text-xl">50+</h4>
+                        <p class="text-gray-600">合作企业</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-md shadow-sm flex-1 min-w-[150px]">
+                        <h4 class="font-bold text-primary text-xl">100+</h4>
+                        <p class="text-gray-600">面料产品</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 产品中心 -->
+<section id="product" class="py-20">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-[clamp(1.8rem,4vw,2.8rem)] font-bold text-primary mb-3">产品中心</h2>
+            <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            <p class="text-gray-600 mt-4 max-w-2xl mx-auto">专注高端纺织面料，涵盖时装面料、家纺面料、功能性面料等全品类，满足不同客户需求</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- 产品1 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-scale">
+                <div class="h-64 overflow-hidden">
+                    <img src="https://picsum.photos/id/106/600/400" alt="高端时装面料" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-primary mb-2">高端时装面料</h3>
+                    <p class="text-gray-600 mb-4">舒适透气、质感高级，适用于各类中高档服装</p>
+                    <a href="#" class="text-secondary font-medium inline-flex items-center">
+                        查看详情 <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 产品2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-scale">
+                <div class="h-64 overflow-hidden">
+                    <img src="https://picsum.photos/id/180/600/400" alt="家纺精品面料" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-primary mb-2">家纺精品面料</h3>
+                    <p class="text-gray-600 mb-4">柔软亲肤、环保染色，适用于家纺、家居、软装等领域</p>
+                    <a href="#" class="text-secondary font-medium inline-flex items-center">
+                        查看详情 <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 产品3 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-scale">
+                <div class="h-64 overflow-hidden">
+                    <img src="https://picsum.photos/id/1060/600/400" alt="功能性科技面料" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-primary mb-2">功能性科技面料</h3>
+                    <p class="text-gray-600 mb-4">抗菌、抗皱、防水、透气等功能性，满足高端定制需求</p>
+                    <a href="#" class="text-secondary font-medium inline-flex items-center">
+                        查看详情 <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 企业优势 -->
+<section id="advantage" class="py-20 bg-primary text-white">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-[clamp(1.8rem,4vw,2.8rem)] font-bold mb-3">企业优势</h2>
+            <div class="w-20 h-1 bg-secondary mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- 优势1 -->
+            <div class="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover-scale">
+                <div class="text-secondary text-4xl mb-4"><i class="fa fa-industry"></i></div>
+                <h3 class="text-xl font-bold mb-3">先进设备</h3>
+                <p class="text-white/80">引进国内外高端纺织生产设备，保证产品精度与品质</p>
+            </div>
+
+            <!-- 优势2 -->
+            <div class="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover-scale">
+                <div class="text-secondary text-4xl mb-4"><i class="fa fa-flask"></i></div>
+                <h3 class="text-xl font-bold mb-3">研发创新</h3>
+                <p class="text-white/80">专业研发团队，持续新品开发，满足市场多样化需求</p>
+            </div>
+
+            <!-- 优势3 -->
+            <div class="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover-scale">
+                <div class="text-secondary text-4xl mb-4"><i class="fa fa-check-square"></i></div>
+                <h3 class="text-xl font-bold mb-3">严格品控</h3>
+                <p class="text-white/80">全流程质量管控体系，从原料到成品层层检测，品质可靠</p>
+            </div>
+
+            <!-- 优势4 -->
+            <div class="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover-scale">
+                <div class="text-secondary text-4xl mb-4"><i class="fa fa-users"></i></div>
+                <h3 class="text-xl font-bold mb-3">贴心服务</h3>
+                <p class="text-white/80">一对一客户服务，快速响应，提供全方位面料解决方案</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 联系我们 -->
+<section id="contact" class="py-20">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-[clamp(1.8rem,4vw,2.8rem)] font-bold text-primary mb-3">联系我们</h2>
+            <div class="w-20 h-1 bg-secondary mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="bg-neutral p-8 rounded-xl shadow-md">
+                <h3 class="text-2xl font-bold text-primary mb-6">联系方式</h3>
+                <div class="space-y-5">
+                    <div class="flex items-start gap-4">
+                        <div class="text-secondary text-xl mt-1"><i class="fa fa-map-marker"></i></div>
+                        <div>
+                            <h4 class="font-bold">公司地址</h4>
+                            <p class="text-gray-700">安徽省（可自行修改详细地址）</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="text-secondary text-xl mt-1"><i class="fa fa-phone"></i></div>
+                        <div>
+                            <h4 class="font-bold">联系电话</h4>
+                            <p class="text-gray-700">400-XXXX-XXXX（可自行修改）</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="text-secondary text-xl mt-1"><i class="fa fa-envelope"></i></div>
+                        <div>
+                            <h4 class="font-bold">企业邮箱</h4>
+                            <p class="text-gray-700">xc@smqc.top（可自行修改）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-md">
+                <h3 class="text-2xl font-bold text-primary mb-6">在线咨询</h3>
+                <form class="space-y-4">
+                    <div>
+                        <input type="text" placeholder="您的姓名" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
+                    </div>
+                    <div>
+                        <input type="tel" placeholder="您的电话" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
+                    </div>
+                    <div>
+                        <textarea rows="4" placeholder="咨询内容" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-md font-medium transition-colors">
+                        提交咨询
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="bg-dark text-white pt-16 pb-6">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="grid md:grid-cols-3 gap-10 mb-10">
+            <div>
+                <h3 class="text-xl font-bold mb-4">安徽旭辰纺织</h3>
+                <p class="text-gray-400 mb-4">专注高端纺织面料研发与生产，为您提供优质纺织解决方案</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-secondary text-xl transition-colors"><i class="fa fa-weixin"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-secondary text-xl transition-colors"><i class="fa fa-phone"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-secondary text-xl transition-colors"><i class="fa fa-envelope"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">快速导航</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#home" class="hover:text-secondary transition-colors">首页</a></li>
+                    <li><a href="#about" class="hover:text-secondary transition-colors">关于我们</a></li>
+                    <li><a href="#product" class="hover:text-secondary transition-colors">产品中心</a></li>
+                    <li><a href="#contact" class="hover:text-secondary transition-colors">联系我们</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">联系我们</h3>
+                <p class="text-gray-400 mb-2">地址：安徽省（可修改）</p>
+                <p class="text-gray-400 mb-2">电话：400-XXXX-XXXX</p>
+                <p class="text-gray-400">邮箱：xc@smqc.top</p>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-6 text-center text-gray-500 text-sm">
+            <p>Copyright © 2025 安徽旭辰纺织科技有限公司 版权所有  域名：xc.smqc.top</p>
+        </div>
+    </div>
+</footer>
+
+<!-- JS -->
+<script>
+    // 移动端菜单切换
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const icon = menuBtn.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+    });
+
+    // 滚动时导航栏样式变化
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('shadow-md');
+            header.classList.remove('shadow-sm');
+        } else {
+            header.classList.remove('shadow-md');
+            header.classList.add('shadow-sm');
+        }
+    });
+
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                // 关闭移动端菜单
+                mobileMenu.classList.add('hidden');
+                const icon = menuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    });
+</script>
+</body>
+</html>
