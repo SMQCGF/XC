@@ -224,7 +224,7 @@
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-primary mb-2">酷丝棉全系列</h3>
-                    <p class="text-gray-600 mb-4">酷丝棉斜纹、平纹、格子、T4、T8等全规格现货，75D/100D/150D原料齐全</p>
+                    <p class="text-gray-600 mb-4">酷丝棉斜纹、平纹、格子、T4、T8等全规格系列，75D/100D/150D原料齐全</p>
                 </div>
             </div>
 
@@ -246,348 +246,58 @@
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-primary mb-2">春亚纺&环保再生面料</h3>
-                    <p class="text-gray-600 mb-4">提花春亚纺、消光斜格、高弹米通；GRS认证环保再生涤纶塔丝绒系列</p>
+                    <p class="text-gray-600 mb-4">格子、平纹，斜纹、提花春亚纺系列；塔丝绒系列；GRS认证环保再生系列</p>
                 </div>
             </div>
         </div>
 
-        <!-- 完整产品规格表（全量补全） -->
-        <div class="bg-white rounded-xl shadow-lg p-6 md:p-10">
-            <h3 class="text-2xl font-bold text-primary mb-6 text-center">全系列产品规格表</h3>
-            <div class="table-scroll">
-                <table class="w-full border-collapse text-sm">
+        <!-- 完整产品规格表（在线加载 Excel，可搜索 / 密码查看价格） -->
+        <div class="bg-white rounded-xl shadow-lg p-6 md:p-10" id="specBlock">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+                <h3 class="text-2xl font-bold text-primary">全系列产品规格表</h3>
+                <div class="flex flex-col sm:flex-row gap-3 sm:items-center">
+                    <div class="relative">
+                        <i class="fa fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" id="specSearch" placeholder="搜索编号 / 品名"
+                               class="w-full sm:w-64 pl-9 pr-3 py-2 border border-gray-300 rounded-md outline-none focus:border-primary transition-colors">
+                    </div>
+                    <button id="showPriceBtn" class="bg-secondary hover:bg-secondary/90 text-white px-4 py-2 rounded-md font-medium transition-colors">
+                        <i class="fa fa-eye mr-1"></i>查看价格
+                    </button>
+                    <button id="showContactBtn" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md font-medium transition-colors">
+                        <i class="fa fa-phone mr-1"></i>联系
+                    </button>
+                </div>
+            </div>
+
+            <!-- Excel 调用地址（改成你自己的 GitHub Raw 链接即可） -->
+            <script>
+                window.SPEC_EXCEL_URL = "https://ghproxy.net/https://raw.githubusercontent.com/smqcgf/CP/main/产品规格.xlsx";
+            </script>
+
+            <div class="text-sm text-gray-500 mb-3 flex items-center gap-4">
+                <span id="specCount">加载中…</span>
+                <a href="#" id="specSourceLink" target="_blank" class="text-primary hover:underline hidden">查看数据源</a>
+            </div>
+
+            <div class="table-scroll rounded-lg border border-gray-200">
+                <table class="w-full border-collapse text-sm whitespace-nowrap">
                     <thead>
                         <tr class="bg-primary text-white">
-                            <th class="border p-2">品名</th>
-                            <th class="border p-2">规格</th>
-                            <th class="border p-2">原料</th>
-                            <th class="border p-2">品名</th>
-                            <th class="border p-2">规格</th>
-                            <th class="border p-2">原料</th>
+                            <th class="border-b border-primary/30 p-3 text-left">编号</th>
+                            <th class="border-b border-primary/30 p-3 text-left">品名</th>
+                            <th class="border-b border-primary/30 p-3 text-left">规格</th>
+                            <th class="border-b border-primary/30 p-3 text-left">原料</th>
+                            <th class="border-b border-primary/30 p-3 text-left">克重</th>
+                            <th class="border-b border-primary/30 p-3 text-left">色坯</th>
+                            <th class="border-b border-primary/30 p-3 text-left">门幅</th>
+                            <th class="border-b border-primary/30 p-3 text-left">价格</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td class="border p-2">T400破卡</td>
-                            <td class="border p-2">18 * 4 36 * 43</td>
-                            <td class="border p-2">75 * 75</td>
-                            <td class="border p-2">天丝绵</td>
-                            <td class="border p-2">20 * 3 * 33</td>
-                            <td class="border p-2">80S*155</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">T400王者荣耀</td>
-                            <td class="border p-2">18 * 3 * 45</td>
-                            <td class="border p-2">75 * 75 * 150</td>
-                            <td class="border p-2">钛金绵</td>
-                            <td class="border p-2">14 * 4 * 29</td>
-                            <td class="border p-2">40S*35</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">T400王者归来</td>
-                            <td class="border p-2">18 * 3 * 45</td>
-                            <td class="border p-2">75 * 75 * 150</td>
-                            <td class="border p-2">超金绵</td>
-                            <td class="border p-2">14 * 4 * 45</td>
-                            <td class="border p-2">40S*75</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">T400老珍珠点</td>
-                            <td class="border p-2">17 * 3 * 56</td>
-                            <td class="border p-2">75 * 75 * 150</td>
-                            <td class="border p-2">T400小牛津</td>
-                            <td class="border p-2">17 * 4 * 25 * 27</td>
-                            <td class="border p-2">75 * 4 * 150</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">T400横条21</td>
-                            <td class="border p-2">16 * 4 * 32</td>
-                            <td class="border p-2">100 * 75 * 150</td>
-                            <td class="border p-2">T800牛津布</td>
-                            <td class="border p-2">16 * 4 * 30</td>
-                            <td class="border p-2">100 * 150</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">50S*75闪电阻</td>
-                            <td class="border p-2">19 * 3 * 37</td>
-                            <td class="border p-2">50S*75</td>
-                            <td class="border p-2">T800多乐棉</td>
-                            <td class="border p-2">18 * 3 * 34</td>
-                            <td class="border p-2">75 * 75 * 150</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">50S*75酷丝绵2/1斜</td>
-                            <td class="border p-2">19 * 3 * 37</td>
-                            <td class="border p-2">50S*75</td>
-                            <td class="border p-2">T800十面埋伏</td>
-                            <td class="border p-2">16 * 4 * 38</td>
-                            <td class="border p-2">100 * 40S*150</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">50S*75酷丝绵2/2斜</td>
-                            <td class="border p-2">19 * 3 * 37</td>
-                            <td class="border p-2">50S*75</td>
-                            <td class="border p-2">T800低弹半光单纬</td>
-                            <td class="border p-2">21 * 2 * 32</td>
-                            <td class="border p-2">75 * 75</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">50S*75酷丝绵骑兵斜</td>
-                            <td class="border p-2">19 * 3 * 37</td>
-                            <td class="border p-2">50S*75</td>
-                            <td class="border p-2">T800低弹消光双纬</td>
-                            <td class="border p-2">20 * 2 * 28</td>
-                            <td class="border p-2">75 * 75 * 2</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">40S*75平纹单双</td>
-                            <td class="border p-2">18 * 2 * 26 * 28 * 30</td>
-                            <td class="border p-2">40S*75 * 150</td>
-                            <td class="border p-2 font-bold bg-neutral" colspan="3">春亚纺系列</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">40S*75 * 150酷丝绵1/2</td>
-                            <td class="border p-2">18 * 3 * 30 * 34</td>
-                            <td class="border p-2">40S*75 * 150</td>
-                            <td class="border p-2">X字格</td>
-                            <td class="border p-2">16 * 4 * 46</td>
-                            <td class="border p-2">50 * 50</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">40S*75 * 150酷丝绵2/2</td>
-                            <td class="border p-2">18 * 3 * 30 * 34 * 38</td>
-                            <td class="border p-2">40S*75 * 150</td>
-                            <td class="border p-2">米字格</td>
-                            <td class="border p-2">17.5 * 3 * 34</td>
-                            <td class="border p-2">75 * 75 * 150</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">40S*75 * 150酷丝绵3/1</td>
-                            <td class="border p-2">18 * 3 * 31 * 34</td>
-                            <td class="border p-2">40S*75 * 150</td>
-                            <td class="border p-2">芬迪格</td>
-                            <td class="border p-2">16 * 4 * 42</td>
-                            <td class="border p-2">75 * 75</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">40S*75 * 150酷丝绵3/2</td>
-                            <td class="border p-2">13.5 * 4 * 35 * 39</td>
-                            <td class="border p-2">40S*75 * 150</td>
-                            <td class="border p-2">消光斜格</td>
-                            <td class="border p-2">17.5 * 3 * 28</td>
-                            <td class="border p-2">75 * 150</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">40S*75 * 150酷丝绵3/3斜</td>
-                            <td class="border p-2">18 * 3 * 35</td>
-                            <td class="border p-2">40S*75 * 150</td>
-                            <td class="border p-2">意大利点</td>
-                            <td class="border p-2">21 * 3 * 33</td>
-                            <td class="border p-2">75 * 75</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">40S*300酷丝绵3/2变化斜</td>
-                            <td class="border p-2">13.5 * 4 * 27</td>
-                            <td class="border p-2">40S*300</td>
-                            <td class="border p-2">消光斜桃</td>
-                            <td class="border p-2">20 * 3 * 33</td>
-                            <td class="border p-2">75 * 75</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">40S*75 * 150酷丝绵骑兵斜</td>
-                            <td class="border p-2">18 * 3 * 30 * 34 * 38</td>
-                            <td class="border p-2">40S*75 * 150</td>
-                            <td class="border p-2">高弹米通</td>
-                            <td class="border p-2">20 * 3 * 34</td>
-                            <td class="border p-2">50 * 50 * 100</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">40S*150双面骑兵斜</td>
-                            <td class="border p-2">13.5 * 4 * 35</td>
-                            <td class="border p-2">40S*150</td>
-                            <td class="border p-2">消光中点</td>
-                            <td class="border p-2">17.5 * 3 * 28</td>
-                            <td class="border p-2">75 * 75 * 150</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">40S*150酷丝绵子母斜</td>
-                            <td class="border p-2">13.5 * 4 * 35</td>
-                            <td class="border p-2">40S*150</td>
-                            <td class="border p-2">消光双线浮点</td>
-                            <td class="border p-2">21 * 3 * 33</td>
-                            <td class="border p-2">75 * 75 * 150</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">40S*150酷丝绵复合斜</td>
-                            <td class="border p-2">13.5 * 4 * 35</td>
-                            <td class="border p-2">40S*150</td>
-                            <td class="border p-2">横条春亚纺</td>
-                            <td class="border p-2">17.5 * 3 * 28</td>
-                            <td class="border p-2">75 * 75 * 150</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">40S*150酷丝绵钻石斜</td>
-                            <td class="border p-2">18 * 3 * 35</td>
-                            <td class="border p-2">40S*150</td>
-                            <td class="border p-2">消光小蜂巢</td>
-                            <td class="border p-2">17.5 * 3 * 29</td>
-                            <td class="border p-2">75 * 75 * 150</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">40S*150酷丝绵细斜料</td>
-                            <td class="border p-2">18 * 3 * 35</td>
-                            <td class="border p-2">40S*150</td>
-                            <td class="border p-2">消光骑兵斜</td>
-                            <td class="border p-2">17.5 * 3 * 32</td>
-                            <td class="border p-2">75 * 150</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">50D*50D-T800平纹</td>
-                            <td class="border p-2">21 * 3 * 46</td>
-                            <td class="border p-2">50 * 50</td>
-                            <td class="border p-2">0.2-0.25桃皮格</td>
-                            <td class="border p-2">17.5 * 3 * 23 * 26</td>
-                            <td class="border p-2">75 * 150 * 150</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">50D*50D T800骑兵斜</td>
-                            <td class="border p-2">21 * 3 * 52</td>
-                            <td class="border p-2">50 * 50</td>
-                            <td class="border p-2">0.5半光桃格</td>
-                            <td class="border p-2">17.5 * 3 * 31</td>
-                            <td class="border p-2">75 * 150 * 150</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">50D*50D T800珍珠点</td>
-                            <td class="border p-2">21 * 3 * 50</td>
-                            <td class="border p-2">50 * 50 * 100</td>
-                            <td class="border p-2">240T 0.1格-0.7格</td>
-                            <td class="border p-2">17.5 * 3 * 28</td>
-                            <td class="border p-2">75 * 50 * 150</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">75 * 75 * 150消光2/2斜</td>
-                            <td class="border p-2">17 * 4 * 35 * 39 * 45</td>
-                            <td class="border p-2">75 * 75 * 150</td>
-                            <td class="border p-2">300T 0.1格-0.5格</td>
-                            <td class="border p-2">22 * 3 * 40</td>
-                            <td class="border p-2">50 * 50 * 100</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">75 * 75 * 150消光3/斜</td>
-                            <td class="border p-2">17 * 4 * 35 * 45</td>
-                            <td class="border p-2">75 * 75 * 150</td>
-                            <td class="border p-2">260T消光方格</td>
-                            <td class="border p-2">20 * 3 * 26 * 33</td>
-                            <td class="border p-2">75 * 75 * 150</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">75 * 75 * 150消光骑兵斜</td>
-                            <td class="border p-2">17 * 4 * 35 * 39 * 45</td>
-                            <td class="border p-2">75 * 75 * 150</td>
-                            <td class="border p-2">300T弹丝罗马格</td>
-                            <td class="border p-2">22 * 3 * 40</td>
-                            <td class="border p-2">50 * 50</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">T400半消0.3格</td>
-                            <td class="border p-2">17 * 2 * 27</td>
-                            <td class="border p-2">75 * 150 * 300</td>
-                            <td class="border p-2">300T弹丝阴阳格</td>
-                            <td class="border p-2">22 * 3 * 40</td>
-                            <td class="border p-2">50 * 50</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">40S*150酷丝绵0.3格</td>
-                            <td class="border p-2">18 * 2 * 25</td>
-                            <td class="border p-2">40S*150 * 300</td>
-                            <td class="border p-2">50D珍珠点格</td>
-                            <td class="border p-2">22 * 3 * 40</td>
-                            <td class="border p-2">50 * 50 * 150</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">40S*150酷丝绵0.5格</td>
-                            <td class="border p-2">18 * 2 * 26</td>
-                            <td class="border p-2">40S*150 * 300</td>
-                            <td class="border p-2">75 * 150珍珠点</td>
-                            <td class="border p-2">17.5 * 3 * 35</td>
-                            <td class="border p-2">75 * 75 * 150</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">80S*50平纹酷丝绵</td>
-                            <td class="border p-2">18 * 3 * 43</td>
-                            <td class="border p-2">80S*50</td>
-                            <td class="border p-2">75 * 300珍珠点</td>
-                            <td class="border p-2">17.5 * 3 * 35</td>
-                            <td class="border p-2">75 * 75 * 300</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">80S*75酷丝绵双2双线</td>
-                            <td class="border p-2">18 * 3 * 40</td>
-                            <td class="border p-2">80S*75</td>
-                            <td class="border p-2">50 * 100单层米通</td>
-                            <td class="border p-2">23 * 3 * 37</td>
-                            <td class="border p-2">50 * 50 * 150</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">80S*75酷丝绵骑兵斜</td>
-                            <td class="border p-2">18 * 3 * 40</td>
-                            <td class="border p-2">80S*75</td>
-                            <td class="border p-2">75 * 150单层米通</td>
-                            <td class="border p-2">17.5 * 3 * 32</td>
-                            <td class="border p-2">75 * 75 * 150</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">80S*50 * 200酷丝绵0.5格</td>
-                            <td class="border p-2">18 * 3 * 42</td>
-                            <td class="border p-2">80S*50 * 200</td>
-                            <td class="border p-2">228T涤纶塔丝绒</td>
-                            <td class="border p-2">17.5 * 3 * 26</td>
-                            <td class="border p-2">75 * 160</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">100D*35S酷丝绵3/斜</td>
-                            <td class="border p-2">16 * 4 * 43</td>
-                            <td class="border p-2">100 * 35S</td>
-                            <td class="border p-2">320T涤纶塔丝绒</td>
-                            <td class="border p-2">17.5 * 3 * 18</td>
-                            <td class="border p-2">75 * 160 * 2</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">100D*75D T800 3/斜</td>
-                            <td class="border p-2">16 * 4 * 48</td>
-                            <td class="border p-2">100 * 75</td>
-                            <td class="border p-2">消光塔丝绒0.25格</td>
-                            <td class="border p-2">19 * 3 * 26</td>
-                            <td class="border p-2">75 * 150 * 320</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">120D消光扁平牛津</td>
-                            <td class="border p-2">13 * 3 * 32</td>
-                            <td class="border p-2">120 * 150</td>
-                            <td class="border p-2">单经双纬消光牛津</td>
-                            <td class="border p-2">18 * 2 * 19</td>
-                            <td class="border p-2">150 * 150 * 2</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">120D消光扁平3/斜</td>
-                            <td class="border p-2">17 * 4 * 47</td>
-                            <td class="border p-2">120 * 35S</td>
-                            <td class="border p-2">双经双纬消光牛津</td>
-                            <td class="border p-2">19 * 4 * 26</td>
-                            <td class="border p-2">75 * 2+75 * 2</td>
-                        </tr>
-                        <tr>
-                            <td class="border p-2">120D消光扁平鱼骨纹</td>
-                            <td class="border p-2">17 * 4 * 47</td>
-                            <td class="border p-2">120 * 35S</td>
-                            <td class="border p-2">300 * 300消光小牛津</td>
-                            <td class="border p-2">12 * 4 * 18</td>
-                            <td class="border p-2">150 * 2+150 * 2</td>
-                        </tr>
-                    </tbody>
+                    <tbody id="specTbody"><tr><td colspan="8" class="p-6 text-center text-gray-400">正在加载产品规格…</td></tr></tbody>
                 </table>
             </div>
+            <p class="text-xs text-gray-400 mt-3">提示：把鼠标仓库里的 产品规格.xlsx 更新后，网页会自动同步（可能需要刷新）。</p>
         </div>
     </div>
 </section>
@@ -665,10 +375,14 @@
                             <h4 class="font-bold">微信联系方式</h4>
                             <div class="flex gap-4 mt-2">
                                 <button onclick="copyWechat('18962500118')" class="text-blue-600 hover:underline">
-                                    张经理（沙漠倾城）：18962500118
+                                    张经理
+                                  （沙漠倾城）：
+                                    18962500118
                                 </button>
                                 <button onclick="copyWechat('13957391917')" class="text-blue-600 hover:underline">
-                                    储经理（coco）：13957391917
+                                    储经理 
+                                  （coco）：
+                                    13957391917
                                 </button>
                             </div>
                         </div>
@@ -688,7 +402,7 @@
                         <div class="text-secondary text-xl mt-1"><i class="fa fa-file-text-o"></i></div>
                         <div>
                             <h4 class="font-bold">旭辰纺织实时产品规格</h4>
-                            <a href="https://cp.smqc.top" target="_blank" class="text-blue-600 hover:underline">点击查看</a>
+                            <a href="https://cp.smqc.top" target="_blank" class="text-blue-600 hover:underline">旭辰纺织实时产品规格点击查看</a>
                         </div>
                     </div>
                     
@@ -721,7 +435,7 @@
                 <div class="grid grid-cols-2 gap-6">
                     <!-- 张斌微信二维码 -->
                     <div class="text-center">
-                        <h4 class="font-bold text-gray-800 mb-2">张斌微信</h4>
+                        <h4 class="font-bold text-gray-800 mb-2">张经理微信</h4>
                         <div class="bg-white p-2 border rounded-lg mb-2">
                             <img src="https://github.com/SMQCGF/XC/blob/main/%E5%BC%A0%E5%BE%AE%E4%BF%A1.jpg?raw=true" 
                                  alt="张斌微信二维码" 
@@ -737,7 +451,7 @@
                     
                     <!-- 储林珍微信二维码 -->
                     <div class="text-center">
-                        <h4 class="font-bold text-gray-800 mb-2">储林珍微信</h4>
+                        <h4 class="font-bold text-gray-800 mb-2">储经理微信</h4>
                         <div class="bg-white p-2 border rounded-lg mb-2">
                             <img src="https://github.com/SMQCGF/XC/blob/main/%E5%82%A8%E5%BE%AE%E4%BF%A1.jpg?raw=true" 
                                  alt="储林珍微信二维码" 
@@ -753,7 +467,7 @@
                     
                     <!-- 门市部地址二维码 -->
                     <div class="text-center">
-                        <h4 class="font-bold text-gray-800 mb-2">门市部地址</h4>
+                        <h4 class="font-bold text-gray-800 mb-2">门市部地址导航</h4>
                         <div class="bg-white p-2 border rounded-lg mb-2">
                             <img src="https://github.com/SMQCGF/XC/blob/main/%E6%97%AD%E8%BE%B0%E7%BA%BA%E7%BB%87%E5%9C%B0%E5%9D%80%E7%9B%9B%E6%B3%BD%E9%95%87%E4%B8%9C%E6%96%B9%E4%B8%9D%E7%BB%B8%E5%B8%82%E5%9C%BA%E6%B8%A9%E5%B7%9E%E5%95%86%E5%8C%BA13%E5%B9%A21%E5%8F%B7.png?raw=true" 
                                  alt="旭辰纺织门市部地址二维码" 
@@ -769,7 +483,7 @@
                     
                     <!-- 仓库地址二维码 -->
                     <div class="text-center">
-                        <h4 class="font-bold text-gray-800 mb-2">仓库地址</h4>
+                        <h4 class="font-bold text-gray-800 mb-2">仓库地址导航</h4>
                         <div class="bg-white p-2 border rounded-lg mb-2">
                             <img src="https://github.com/SMQCGF/XC/blob/main/%E6%97%AD%E8%BE%B0%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80%E7%9B%9B%E6%B3%BD%E9%95%87%E7%AB%8B%E6%96%B0%E8%B7%AF88%E5%8F%B7.png?raw=true" 
                                  alt="旭辰纺织仓库地址二维码" 
@@ -946,5 +660,152 @@
     // iOS/Android 兼容处理
     document.addEventListener('touchstart', function() {}, false);
 </script>
+
+<!-- SheetJS 用于解析 Excel -->
+<script src="https://fastly.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+<script>
+(function () {
+    var COLS = ["编号：", "品名：", "规格：", "原料：", "克重：", "色胚：", "门幅：", "价格："];
+    var allData = [];
+    var showPrice = false;
+    var pwdRight = "18962500118";
+
+    function getVal(item, keys) {
+        for (var i = 0; i < keys.length; i++) {
+            if (item[keys[i]] !== undefined && item[keys[i]] !== null && String(item[keys[i]]).trim() !== "") {
+                return item[keys[i]];
+            }
+        }
+        return "";
+    }
+
+    // 兼容中文列名可能带 / 不带冒号
+    function colKey(prefix) {
+        return [prefix, prefix + "：", prefix + ":"];
+    }
+
+    function loadExcel() {
+        var url = window.SPEC_EXCEL_URL;
+        var tbody = document.getElementById("specTbody");
+        var countEl = document.getElementById("specCount");
+        if (!url) {
+            countEl.textContent = "未配置 Excel 地址";
+            return;
+        }
+        document.getElementById("specSourceLink").href = url.replace("ghproxy.net/https://", "https://").replace("https://ghproxy.net/", "");
+        document.getElementById("specSourceLink").classList.remove("hidden");
+
+        fetch(url)
+            .then(function (res) { return res.arrayBuffer(); })
+            .then(function (buf) {
+                var wb = XLSX.read(new Uint8Array(buf), { type: "array" });
+                var sheet = wb.Sheets[wb.SheetNames[0]];
+                var rows = XLSX.utils.sheet_to_json(sheet, { defval: "" });
+
+                allData = rows.filter(function (item) {
+                    var code = String(getVal(item, colKey("编号")) || "").trim();
+                    return code && code.indexOf("XC") === 0 && String(getVal(item, colKey("品名")) || "").trim();
+                });
+                renderTable();
+                countEl.textContent = "共 " + allData.length + " 条产品";
+            })
+            .catch(function (err) {
+                console.error(err);
+                tbody.innerHTML = '<tr><td colspan="8" class="p-6 text-center text-red-500">加载失败，请检查 Excel 地址或网络。(' + err.message + ")</td></tr>";
+                countEl.textContent = "加载失败";
+            });
+    }
+
+    function val(item, prefix) {
+        return getVal(item, colKey(prefix));
+    }
+
+    function renderTable() {
+        var tbody = document.getElementById("specTbody");
+        var html = "";
+        for (var i = 0; i < allData.length; i++) {
+            var item = allData[i];
+            var price = showPrice ? (val(item, "价格") || "") : "******";
+            html += "<tr class=\"border-b hover:bg-primary/5" + (i % 2 === 1 ? " bg-neutral" : "") + "\">" +
+                "<td class=\"p-3\">" + val(item, "编号") + "</td>" +
+                "<td class=\"p-3\">" + val(item, "品名") + "</td>" +
+                "<td class=\"p-3\">" + val(item, "规格") + "</td>" +
+                "<td class=\"p-3\">" + val(item, "原料") + "</td>" +
+                "<td class=\"p-3\">" + val(item, "克重") + "</td>" +
+                "<td class=\"p-3\">" + val(item, "色胚") + "</td>" +
+                "<td class=\"p-3\">" + val(item, "门幅") + "</td>" +
+                "<td class=\"p-3 font-medium text-secondary\">" + price + "</td>" +
+                "</tr>";
+        }
+        tbody.innerHTML = html || '<tr><td colspan="8" class="p-6 text-center text-gray-400">暂无数据</td></tr>';
+    }
+
+    function searchTable() {
+        var kw = document.getElementById("specSearch").value.toUpperCase().trim();
+        var trs = document.querySelectorAll("#specTbody tr");
+        var visible = 0;
+        trs.forEach(function (tr) {
+            var hit = !kw || tr.textContent.toUpperCase().indexOf(kw) !== -1;
+            tr.style.display = hit ? "" : "none";
+            if (hit) visible++;
+        });
+        document.getElementById("specCount").textContent = "匹配 " + visible + " / " + allData.length + " 条";
+    }
+
+    function openModal(id) { document.getElementById(id).classList.add("show"); }
+    function closeModal(id) { document.getElementById(id).classList.remove("show"); }
+
+    function checkPwd() {
+        var v = document.getElementById("pwdInput").value;
+        if (v === pwdRight) {
+            showPrice = true; renderTable(); closeModal("pwdModal"); alert("密码正确，价格已显示");
+        } else {
+            alert("密码错误");
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("specSearch").addEventListener("input", searchTable);
+
+        document.getElementById("showPriceBtn").addEventListener("click", function () { openModal("pwdModal"); });
+        document.getElementById("showContactBtn").addEventListener("click", function () { openModal("contactModal"); });
+
+        document.getElementById("pwdConfirm").addEventListener("click", checkPwd);
+        document.getElementById("pwdInput").addEventListener("keydown", function (e) { if (e.key === "Enter") checkPwd(); });
+
+        loadExcel();
+    });
+})();
+</script>
+
+<!-- 联系 / 密码弹窗（共用 .modal 样式） -->
+<style>
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;place-items:center;z-index:1000}
+.modal-overlay.show{display:grid}
+.modal-box{background:#fff;padding:24px;border-radius:12px;min-width:320px;max-width:90vw;line-height:1.9}
+.modal-box h3{color:#0F3B5F;margin-bottom:12px}
+.modal-box input{width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:6px;outline:none;margin:8px 0}
+.modal-box button{cursor:pointer}
+</style>
+<div id="contactModal" class="modal-overlay" onclick="this.classList.remove('show')">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <h3>联系我们</h3>
+    <p>沙漠倾城</p>
+    <p>微信：18962500118</p>
+    <p>企鹅：18962500118</p>
+    <p>邮箱：<a href="mailto:18962500118@qq.com" class="text-primary">18962500118@qq.com</a></p>
+    <p>邮箱：<a href="mailto:674058055@qq.com" class="text-primary">674058055@qq.com</a></p>
+    <hr style="margin:12px 0;border-color:#eee">
+    <p>旭辰纺织官方网站：xc.smqc.top</p>
+    <button onclick="document.getElementById('contactModal').classList.remove('show')" class="bg-primary text-white px-4 py-2 rounded-md mt-2">关闭</button>
+  </div>
+</div>
+<div id="pwdModal" class="modal-overlay" onclick="this.classList.remove('show')">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <h3>查看价格</h3>
+    <input type="password" id="pwdInput" placeholder="请输入密码">
+    <button id="pwdConfirm" class="bg-secondary text-white px-4 py-2 rounded-md w-full mt-2">确认查看</button>
+  </div>
+</div>
 </body>
 </html>
